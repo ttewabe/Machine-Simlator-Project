@@ -18,9 +18,9 @@ public class Main {
         vendingMachine.displayEnterCoinsMessage();
 
         String userEnteredCoins = scanner.nextLine();
-        int[] enteredCoins = {}; // TODO Complete in step 3
-        vendingMachine.enterCoins(enteredCoins);
+        int[] enteredCoins = Coin.parseCoins(userEnteredCoins);
 
+        vendingMachine.enterCoins(enteredCoins);
         vendingMachine.displayChangeMessage();
 
     }

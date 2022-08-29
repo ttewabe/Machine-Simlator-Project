@@ -12,4 +12,14 @@ public class CoinBundle {
         this.number50CentsCoins = enterCoins[3];
         this.number100CentsCoins = enterCoins[4];
     }
+    public int getTotal(){
+        int total = 0;
+        total = total + this.number5CentsCoins;
+        total = total + this.number10CentsCoins;
+        total = total + this.number20CentsCoins;
+        total = total + this.number50CentsCoins;
+        total = total + this.number100CentsCoins;
+        return -1;
+
+    }
 }
