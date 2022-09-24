@@ -2,26 +2,55 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
 
-        // TODO To complete in step3
-        VendingMachine vendingMachine = new TextBasedVendingMachine();
+        // Create Object method
+        VendingMachine vendingMachine = new VendingMachineImp();
 
-        vendingMachine.displayProducts();
+        vendingMachine.displayItems();
 
-        String selectedProduct = scanner.nextLine();
-        int selectProductNumber = Integer.parseInt(selectedProduct);
+        String selectedItem = sc.nextLine();
+        // string change to integer
+        int selectItemNumber = Integer.parseInt(selectedItem);
 
-        vendingMachine.selectProduct(selectProductNumber);
+        //switch statement to display which item user selected
+        switch(selectItemNumber) {
+            case 1: System.out.println("    * You choose Juice *");
+                break;
+            case 2: System.out.println("    * You choose Coke *");
+                break;
+            case 3: System.out.println("    * You choose Water *");
+                break;
+            case 4: System.out.println("    * You choose Sandwich *");
+                break;
+            case 5: System.out.println("    * You choose Cookie *");
+                break;
+            case 6: System.out.println("    * You choose Pepsi *");
+                break;
+            default: System.out.println("    Ooops!! Out of stock!");
+                break;
+        }
+        System.out.println();
+        // Item selected by user
+        vendingMachine.selectItem(selectItemNumber);
 
-        vendingMachine.displayEnterCoinsMessage();
+        vendingMachine.displayEnterCoins();
 
-        String userEnteredCoins = scanner.nextLine();
+        String userEnteredCoins = sc.nextLine();
+        // String change to  Array
         int[] enteredCoins = Coin.parseCoins(userEnteredCoins);
 
+        // Passing the coins in to Vending machine
         vendingMachine.enterCoins(enteredCoins);
-        vendingMachine.displayChangeMessage();
+        vendingMachine.displayCoinsRemain();
+
+        //displays a message in the console Thank you the user
+        System.out.println("    ");
+        System.out.println("    * THANK YOU 🙏🏽! *");
+
+        sc.close();
 
     }
 }
+

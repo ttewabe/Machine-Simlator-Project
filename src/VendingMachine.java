@@ -1,9 +1,14 @@
 
-public interface VendingMachine {
+public interface  VendingMachine {
 
-    void displayProducts();
-    void selectProduct(int product);
-    void displayEnterCoinsMessage();
-    void enterCoins(int... coins);
-    void displayChangeMessage();
+    public void displayItems();
+
+    public void selectItem(int item);
+
+    public void displayEnterCoins();
+
+    public void enterCoins(int... coins);
+
+    public void displayCoinsRemain();
+
 }
